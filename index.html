@@ -1,0 +1,31 @@
+<!doctype html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Short Buy — खरीदें और बेचें</title><meta name="theme-color" content="#0f766e"><link rel="manifest" href="manifest.json">
+<style>
+*{box-sizing:border-box;margin:0}
+body{font-family:system-ui,"Noto Sans Devanagari",sans-serif;min-height:100vh;display:flex;flex-direction:column;background:#f3f6f5;color:#12211f}
+.top{padding:36px 20px 24px;text-align:center}
+.top h1{font-size:clamp(38px,9vw,64px);font-weight:900;letter-spacing:-1px;color:#0f766e}
+.top p{margin-top:8px;font-size:18px;color:#3f5754}
+.split{flex:1;display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:720px){.split{grid-template-columns:1fr 1fr}}
+.pane{display:flex;flex-direction:column;justify-content:center;gap:10px;padding:34px 24px;text-decoration:none;color:#fff;min-height:220px}
+.pane .em{font-size:52px}
+.pane h2{font-size:28px}
+.pane p{opacity:.92;max-width:34ch}
+.pane b{margin-top:6px;align-self:flex-start;background:#fff;padding:10px 18px;border-radius:999px;font-size:16px}
+.buy{background:#0f766e}.buy b{color:#0f766e}
+.sell{background:#b45309}.sell b{color:#b45309}
+.pane:focus-visible{outline:4px solid #12211f;outline-offset:-8px}
+footer{padding:14px;text-align:center;font-size:14px;color:#3f5754}
+#inst{display:none;margin:8px auto 0;font:inherit;padding:9px 16px;border-radius:999px;border:2px solid #0f766e;background:transparent;color:#0f766e;font-weight:700;cursor:pointer}
+</style></head><body>
+<div class="top"><h1>Short Buy</h1><p>जो चाहिए, सीधे खरीदें। जो बनाते हैं, सीधे बेचें।</p><button id="inst">📲 ऐप इंस्टॉल करें</button></div>
+<div class="split">
+<a class="pane buy" href="shop.html"><span class="em">🛍️</span><h2>खरीदारी करें</h2><p>प्रोडक्ट देखें, कार्ट में डालें और घर बैठे ऑर्डर करें।</p><b>शॉपिंग शुरू करें</b></a>
+<a class="pane sell" href="seller.html"><span class="em">🏪</span><h2>सेलर बनें</h2><p>अपने प्रोडक्ट जोड़ें, ऑर्डर संभालें और बिक्री बढ़ाएँ।</p><b>सेलर पैनल खोलें</b></a>
+</div>
+<footer>© PSB Company</footer>
+<script>
+let d;addEventListener('beforeinstallprompt',e=>{e.preventDefault();d=e;document.getElementById('inst').style.display='inline-block'});
+document.getElementById('inst').onclick=()=>{d&&d.prompt()};
+if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js');
+</script></body></html>
